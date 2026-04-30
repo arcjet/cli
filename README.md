@@ -141,17 +141,6 @@ client (Claude Code, Cursor, VS Code Copilot, and others):
 npx skills add arcjet/skills
 ```
 
-The `arcjet skills` and `arcjet skills install` commands are breadcrumbs — they
-print this recommendation when an agent lands on the CLI without skills
-installed. They no longer write files or ship embedded documentation.
-
-Run guided project setup to authenticate, pick a site, and write `ARCJET_KEY`
-to your `.env`:
-
-```bash
-arcjet skills initialize
-```
-
 The [Arcjet plugin](https://github.com/arcjet/arcjet-plugin) bundles these
 skills (and more) for Claude Code and Cursor — install it with:
 
