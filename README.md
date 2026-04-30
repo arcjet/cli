@@ -24,17 +24,32 @@ documentation.
 
 ## Installation
 
+### npx (recommended, no install)
+
+Run the CLI directly without installing it. Works on macOS, Linux, and Windows:
+
+```bash
+npx -y @arcjet/cli@latest
+```
+
 ### Homebrew (macOS and Linux)
 
 ```bash
 brew install arcjet/tap/arcjet
 ```
 
+### Install script (macOS and Linux)
+
+```bash
+curl -sSfL https://arcjet.com/cli/install.sh | bash
+```
+
 ### Download a release
 
 Download the latest binary for your platform from
 [Releases](https://github.com/arcjet/cli/releases). Extract the archive and
-place the `arcjet` binary somewhere on your `PATH`.
+place the `arcjet` binary somewhere on your `PATH`. This is primarily intended
+for internal redistribution and air-gapped environments.
 
 Available for macOS (Apple Silicon, Intel), Linux (x86_64, arm64), and Windows
 (x86_64, arm64).
@@ -117,35 +132,20 @@ arcjet completion fish > ~/.config/fish/completions/arcjet.fish
 
 ## Agent skills
 
-The `arcjet skills` command provides built-in documentation optimized for AI
-coding agents. Skills are shipped with the binary and always match the current
-CLI version.
-
-List available topics:
+Arcjet's agent-facing skills live at
+[arcjet/skills](https://github.com/arcjet/skills) and are installed via the
+[agentskills.io](https://agentskills.io) `skills` CLI into any compatible
+client (Claude Code, Cursor, VS Code Copilot, and others):
 
 ```bash
-arcjet skills
+npx skills add arcjet/skills
 ```
 
-Show a detailed guide for a specific topic:
+The [Arcjet plugin](https://github.com/arcjet/arcjet-plugin) bundles these
+skills (and more) for Claude Code and Cursor — install it with:
 
 ```bash
-arcjet skills auth
-arcjet skills rules
-arcjet skills analyze
-```
-
-Install the `ARCJET.md` skills file into your project so agents can discover
-Arcjet capabilities automatically:
-
-```bash
-arcjet skills install
-```
-
-Run guided project setup to install the SDK and configure your application:
-
-```bash
-arcjet skills initialize
+npx plugins add arcjet/arcjet-plugin
 ```
 
 ## Get help
